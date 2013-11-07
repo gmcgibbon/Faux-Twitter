@@ -1,14 +1,19 @@
 class TweetsController < ApplicationController
 	def index
-		@tweets = Tweet.all
+		@tweets = Tweet.order('id DESC')
 		@tweet = Tweet.new
 	end
 
 	def create
-		@tweet = Tweet.new params[:tweet]
+		index
+
+		@tweet.update_attributes params[:tweet]
+
 		if @tweet.save
 			redirect_to :action => :index
-    	end
+		else
+			render :action => :index
+		end
     end
 
 	def display

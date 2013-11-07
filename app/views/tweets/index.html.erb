@@ -3,8 +3,11 @@
 <%= form_for @tweet, :url => {:action => 'create'} do |f| %>
 	
 	<% if @tweet.errors.any? %>
-		
-		<p style="color:red;font-size:64px">1234</p>
+		<ul>
+		<% @tweet.errors.full_messages.each do |msg| %>
+        	<li class="error"><%= msg %></li>
+      	<% end %>
+      </ul>
 	<% end %>
 	<div>
 		<%= f.label :text %>
