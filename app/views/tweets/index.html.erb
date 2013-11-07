@@ -17,19 +17,20 @@
 
 <% end %>
 
-<ul>
+<ul class="tweets">
 	<% @tweets.each do |tweet| %>
 
-		<li>
-			<p>
+		<li class="tweet">
+			<p class="tweet_content">
 				<%= tweet.text %>
 			</p>
-			<p>
-				<%= link_to "View", tweet %>
-			</p>
-			<p>
-				<%= link_to "Delete", tweet, :method => :delete, data: { confirm: "Delete tweet?"} %>
-			</p>
+			<div class="tweet_links">
+				<p>
+					<%= link_to "View", tweet %>
+					<br>
+					<%= link_to "Delete", tweet, :method => :delete, data: { confirm: "Delete tweet #{tweet.id}?"} %>
+				</p>
+			</div>
 		</li>
 
 	<% end %>

@@ -3,7 +3,7 @@ FauxTwitter::Application.routes.draw do
   root :to => 'tweets#index', :via => :get
 
   match "/"    => "tweets#create",  :as => "create_tweet", :via => :post
-  match "/:id"    => "tweets#delete",  :as => "delete_tweet", :via => :delete
+  match "/:id" => "tweets#delete",  :as => "delete_tweet", :via => :delete
   match "/:id" => "tweets#display", :as => "tweet",        :via => :get
 
   # The priority is based upon order of creation:

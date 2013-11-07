@@ -7,10 +7,11 @@ class TweetsController < ApplicationController
 	def create
 		index
 
+		@tweet.update_attributes params[:tweet]
+
 		if @tweet.save
 			redirect_to :action => :index
 		else
-			@tweet.update_attributes params[:tweet]
 			render :action => :index
 		end
     end
