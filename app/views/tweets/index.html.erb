@@ -1,0 +1,30 @@
+<h2>Tweets</h2>
+
+<%= form_for @tweet, :url => {:action => 'create'} do |f| %>
+	
+	<% if @tweet.errors.any? %>
+		
+		<p style="color:red;font-size:64px">1234</p>
+	<% end %>
+	<div>
+		<%= f.label :text %>
+		<%= f.text_field :text %>
+		<%= f.submit "Add" %>
+	</div>
+
+<% end %>
+
+<ul>
+	<% @tweets.each do |tweet| %>
+
+		<li>
+			<p>
+				<%= tweet.text %>
+			</p>
+			<p>
+				<%= link_to "View tweet", tweet %>
+			</p>
+		</li>
+
+	<% end %>
+</ul>
