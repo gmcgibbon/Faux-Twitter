@@ -1,6 +1,6 @@
 <h2>Tweets</h2>
 
-<%= form_for @tweet, :url => {:action => 'create'} do |f| %>
+<%= form_for @tweet, :url => {:action => "create"} do |f| %>
 	
 	<% if @tweet.errors.any? %>
 		<ul>
@@ -25,7 +25,10 @@
 				<%= tweet.text %>
 			</p>
 			<p>
-				<%= link_to "View tweet", tweet %>
+				<%= link_to "View", tweet %>
+			</p>
+			<p>
+				<%= link_to "Delete", tweet, :method => :delete, data: { confirm: "Delete tweet?"} %>
 			</p>
 		</li>
 
