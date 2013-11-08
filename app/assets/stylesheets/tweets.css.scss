@@ -17,6 +17,17 @@ $backgroundColor: #CDF999;
     font-style: normal;
 }
 
+::selection
+{
+	background:#3B5323;
+	color:#FFF;
+}
+::-moz-selection
+{
+	background:#3B5323;
+	color:#FFF;
+} 
+
 *
 {
 	font-family: "com4t";
@@ -45,9 +56,19 @@ body
 
 	form.new_tweet
 	{
+
+		background:#CDF666;
+		padding:15px;
+		margin-top:5px;
+		width:444px;
+		border: 3px solid #000;
+		border-radius:8px;
+
 		label, input
 		{
 			display:inline-block;
+			font-size:20px;
+			padding:3px;
 		}
 
 		div.field_with_errors
@@ -69,6 +90,8 @@ body
 		{
 			color:red;
 			list-style:none;
+			font-style:italic;
+			font-size:18px;
 		}
 
 		li.tweet
@@ -78,6 +101,8 @@ body
 			padding:10px;
 			margin-top:5px;
 			width:30%;
+			min-width:200px;
+			max-width:444px;
 			border: 3px solid #000;
 			border-radius:8px;
 
