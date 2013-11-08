@@ -10,8 +10,10 @@ class TweetsController < ApplicationController
 		@tweet.update_attributes params[:tweet]
 
 		if @tweet.save
+			flash[:success] = "Posted!"
 			redirect_to :action => :index
 		else
+			flash.now[:fail] = "Error!"
 			render :action => :index
 		end
     end
